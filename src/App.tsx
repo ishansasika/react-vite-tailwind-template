@@ -19,7 +19,7 @@ const AppRoutes = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="page-container">
         <Header />
         <div className="content-wrapper">

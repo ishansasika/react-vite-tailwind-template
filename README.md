@@ -2,7 +2,7 @@
 
 A modern, production-ready React template built with Vite, TypeScript, and Tailwind CSS. Features a beautiful, responsive UI with multiple pages and components ready to use.
 
-> **👉 First time using this template?** See [SETUP.md](./SETUP.md) for configuration instructions.
+**🔗 [Live Demo](https://react-vite-tailwind-template.web.app)**
 
 ## ✨ Features
 
@@ -124,18 +124,65 @@ All components follow a barrel export pattern with TypeScript:
 
 ## 🚀 Deployment
 
-This template is configured for automatic deployment to GitHub Pages. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+### Firebase Hosting (Automatic with GitHub Actions)
 
-**Quick Deploy:**
-1. Update `vite.config.ts` with your repository name
-2. Push your code to GitHub
-3. Enable GitHub Pages in repository settings (Source: GitHub Actions)
-4. Your site will be live at `https://YOUR_USERNAME.github.io/your-repo-name/`
+This template is configured for automatic deployment to Firebase Hosting via GitHub Actions.
+
+#### Initial Setup
+
+1. **Create a Firebase project** at [Firebase Console](https://console.firebase.google.com/)
+
+2. **Install Firebase CLI:**
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+3. **Login to Firebase:**
+   ```bash
+   firebase login
+   ```
+
+4. **Generate a service account key:**
+   - Go to Firebase Console → Project Settings → Service Accounts
+   - Click "Generate New Private Key"
+   - Save the JSON file securely
+
+5. **Add Firebase secret to GitHub:**
+   - Go to your GitHub repo → Settings → Secrets and variables → Actions
+   - Click "New repository secret"
+   - Name: `FIREBASE_SERVICE_ACCOUNT`
+   - Value: Paste the entire contents of the service account JSON file
+   - Click "Add secret"
+
+6. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Setup Firebase deployment"
+   git push origin main
+   ```
+
+Your app will automatically build and deploy to Firebase whenever you push to the `main` branch!
+
+#### Manual Deployment
+
+You can also deploy manually:
+
+```bash
+# Build your app
+npm run build
+
+# Deploy to Firebase
+firebase deploy
+```
+
+**Firebase Configuration:**
+- Build directory: `dist`
+- Single-page app: Yes (configured in `firebase.json`)
+- Live URL: https://react-vite-tailwind-template.web.app
 
 ## 📚 Documentation
 
-- [SETUP.md](./SETUP.md) - Initial setup and configuration guide
-- [DEPLOYMENT.md](./DEPLOYMENT.md) - Deployment guide for GitHub Pages
+- [FIREBASE_SETUP.md](./FIREBASE_SETUP.md) - Complete Firebase deployment setup guide
 - [CLAUDE.md](./CLAUDE.md) - Architecture and development guide
 
 ## 📝 License

@@ -123,17 +123,17 @@ Contact form (src/app/pages/contact/Contact.tsx:6):
 - onSubmit handler prevents default, logs data, shows alert, resets form
 - No backend integration - implement API call in handleSubmit as needed
 
-### GitHub Pages Routing
-The app is configured to work with GitHub Pages base paths:
-- `BrowserRouter` uses `basename={import.meta.env.BASE_URL}` (src/App.tsx:22)
-- `BASE_URL` comes from `vite.config.ts` base setting
-- `public/404.html` handles client-side routing on GitHub Pages
-- `index.html` includes redirect handler for SPA navigation
-
-When deployed to GitHub Pages, the base path (e.g., `/react-tailwind-template/`) is automatically applied to all routes. For local development, `BASE_URL` is `/`.
+### Deployment
+The app is configured for Firebase Hosting with automatic GitHub Actions deployment:
+- `.github/workflows/firebase-deploy.yml` - CI/CD pipeline
+- `firebase.json` - Firebase hosting configuration (public: dist, SPA rewrites)
+- `.firebaserc` - Firebase project configuration
+- Deploys automatically on push to main branch
+- Requires `FIREBASE_SERVICE_ACCOUNT` secret in GitHub repo settings
 
 ### File Extensions
 - `.tsx` - React components with JSX
 - `.ts` - TypeScript without JSX (barrel exports, utils)
 - `.css` - Stylesheets
 - `.js` - Config files (tailwind.config.js, postcss.config.js, eslint.config.js)
+- `.json` - Firebase and package configuration

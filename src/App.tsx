@@ -1,4 +1,4 @@
-import { BrowserRouter, useRoutes } from "react-router-dom";
+import { BrowserRouter, Navigate, useRoutes } from "react-router-dom";
 import Home from "./app/pages/home";
 import About from "./app/pages/about";
 import Services from "./app/pages/services";
@@ -13,6 +13,7 @@ const AppRoutes = () => {
     { path: "/about", element: <About /> },
     { path: "/services", element: <Services /> },
     { path: "/contact", element: <Contact /> },
+    { path: "*", element: <Navigate to="/" replace /> },
   ]);
   return routes;
 };

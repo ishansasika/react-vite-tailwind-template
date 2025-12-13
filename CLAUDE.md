@@ -53,8 +53,11 @@ const routes = useRoutes([
   { path: "/about", element: <About /> },
   { path: "/services", element: <Services /> },
   { path: "/contact", element: <Contact /> },
+  { path: "*", element: <Navigate to="/" replace /> }, // Catch-all route
 ]);
 ```
+
+**Catch-all Route**: Any invalid/unmatched paths automatically redirect to home (src/App.tsx:16)
 
 ### Component Organization
 All components follow a barrel export pattern:
@@ -103,6 +106,7 @@ All components follow a barrel export pattern:
 2. Create barrel export: `src/app/pages/[page-name]/index.ts` with `export { default } from "./PageName"`
 3. Import in `src/App.tsx`: `import PageName from "./app/pages/page-name"`
 4. Add to routes array in `AppRoutes`: `{ path: "/page-name", element: <PageName /> }`
+   - **Important**: Add new routes BEFORE the catch-all route (`path: "*"`)
 5. Add navigation link in `Header.tsx` navLinks array
 6. Add footer link in `Footer.tsx` if needed
 

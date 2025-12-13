@@ -2,6 +2,8 @@
 
 A modern, production-ready React template built with Vite, TypeScript, and Tailwind CSS. Features a beautiful, responsive UI with multiple pages and components ready to use.
 
+> **👉 First time using this template?** See [SETUP.md](./SETUP.md) for configuration instructions.
+
 ## ✨ Features
 
 - ⚡ **Vite** - Lightning-fast development with Hot Module Replacement
@@ -120,9 +122,21 @@ All components follow a barrel export pattern with TypeScript:
 - **React Router 7** - Client-side routing
 - **ESLint 9** - Code linting
 
+## 🚀 Deployment
+
+This template is configured for automatic deployment to GitHub Pages. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+
+**Quick Deploy:**
+1. Update `vite.config.ts` with your repository name
+2. Push your code to GitHub
+3. Enable GitHub Pages in repository settings (Source: GitHub Actions)
+4. Your site will be live at `https://YOUR_USERNAME.github.io/your-repo-name/`
+
 ## 📚 Documentation
 
-For more detailed information, see [CLAUDE.md](./CLAUDE.md)
+- [SETUP.md](./SETUP.md) - Initial setup and configuration guide
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Deployment guide for GitHub Pages
+- [CLAUDE.md](./CLAUDE.md) - Architecture and development guide
 
 ## 📝 License
 

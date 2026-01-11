@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2025-01-11
+
+### Added
+- **Framer Motion**: Smooth animations and page transitions
+- **Lucide React**: Modern icon library with 1000+ icons
+- **React Hot Toast**: Beautiful toast notifications
+- **Enhanced UI Components**:
+  - Button component with variants (primary, secondary, outline, ghost, danger) and loading states
+  - Card component with hover effects and sub-components (Header, Content, Footer)
+  - Badge component with color variants (default, primary, success, warning, danger, info)
+  - Modal component with animations and size options
+- **404 Not Found Page**: Animated error page with navigation options
+- **Page Transitions**: Smooth animations between route changes
+- **Environment Variables**: .env.example with common configuration options
+- **Toast Notifications**: Global toast system for user feedback
+
+### Changed
+- Updated routing to use NotFound page instead of redirect for 404s
+- Enhanced App.tsx with AnimatePresence for better page transitions
+- Improved user experience with motion and animations throughout
+
+### Developer Experience
+- All UI components built with TypeScript and framer-motion
+- Reusable component library ready for expansion
+- Toast notifications system integrated globally
+
 ## [1.0.0] - 2025-01-11
 
 ### Added

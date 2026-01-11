@@ -1,5 +1,4 @@
 import { HTMLAttributes, forwardRef } from 'react';
-import { motion } from 'framer-motion';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   hover?: boolean;
@@ -10,20 +9,14 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     const baseStyles = 'bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden';
     const hoverStyles = hover ? 'transition-all duration-300 hover:shadow-2xl hover:-translate-y-1' : '';
 
-    const Component = hover ? motion.div : 'div';
-    const motionProps = hover
-      ? { whileHover: { y: -4, transition: { duration: 0.2 } } }
-      : {};
-
     return (
-      <Component
+      <div
         ref={ref}
         className={`${baseStyles} ${hoverStyles} ${className}`}
-        {...(hover ? motionProps : {})}
         {...props}
       >
         {children}
-      </Component>
+      </div>
     );
   }
 );

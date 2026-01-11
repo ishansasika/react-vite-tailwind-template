@@ -1,8 +1,14 @@
 {
   "name": "react-vite-tailwind-template",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "es5"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

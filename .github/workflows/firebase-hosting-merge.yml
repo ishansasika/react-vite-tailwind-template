@@ -24,4 +24,11 @@ jobs:
           credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_VITE_TAILWIND_TEMPLATE }}
 
       - name: Deploy to Firebase Hosting
-        run: npx firebase-tools@latest deploy --only hosting --project react-vite-tailwind-template --non-interactive
+        run: |
+          OUTPUT=$(npx firebase-tools@latest deploy --only hosting --project react-vite-tailwind-template --non-interactive 2>&1)
+          DEPLOY_EXIT=$?
+          echo "$OUTPUT"
+          if [ $DEPLOY_EXIT -ne 0 ]; then
+            echo "$OUTPUT" | grep -q "is the current active version" || exit $DEPLOY_EXIT
+            echo "Skipping: already the current active version."
+          fi
